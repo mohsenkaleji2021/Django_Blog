@@ -1,0 +1,69 @@
+{% extends 'blogg/base.html' %}
+
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+<center>
+  <img class="rounded mx-auto d-block" style="margin-top: 50px;margin-left: 2px;margin-right: 2px;" src="{{ blog.image.url }}" width="300" height="250" alt="">
+  <br><br><h3>{{blog.title}}</h3>
+  <p>{{blog.writer}} :نویسنده</p>
+  <p>{{blog.date}}</p><hr><br>
+  <p id="body-post">{{ blog.content }}</p>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% if user in blog.like.all %}
+      <a href="{% url 'postunlike' blog.id %}" class="btn btn-warning btn-sm glyphicon glyphicon-eye-open">unlike</a>
+  {% else %}
+      <a href="{% url 'postlike' blog.id %}" class="btn btn-warning btn-sm glyphicon glyphicon-eye-open">like</a>
+  {% endif %}
+
+</center>
+
+
+
+<br><br><br><br><br><br>
+
+{% else %}
+<center>
+  <h3 style="margin-top: 125px;margin-bottom: 125px;margin-left: 20px;margin-right: 20px;">
+    برای نمایش مطلب <a href="{% url 'accounts:signup' %}">ثبت نام </a>کنید و یا اگر اکانت دارید <a href="{% url 'accounts:login' %}">وارد</a>
+    سایت شوید
+  </h3>
+</center>
+<br><br><br>
+{% endif %}
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+{% block footer %}
+
+<!-- Footer -->
+<footer class="py-5 bg-dark" id="footer">
+  <div class="container">
+  <p class="m-0 text-center text-white">Copyright &copy; 2021</p><center><p id="copyright"> !تمام حقوق برای این وبسایت محفوظ است </p><hr>
+  <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" id="oloino" href="https://t.me/oloino" role="button">((( oloino  ساخته شده توسط )))</a>
+  </div>
+</footer>
+<!-- end Footer -->
+
+{% endblock footer %}

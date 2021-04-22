@@ -1,0 +1,52 @@
+#body-home{
+    background-image: linear-gradient(to top left, rgb(0, 0, 0), green, yellow, blue );
+}
+
+
+#body-detail{
+    background-repeat: no-repeat;background-image: linear-gradient(to bottom left, rgb(0, 0, 0), green, yellow, blue ); 
+    background-size:contain cover;
+}
+
+
+#body-addpost{
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom left, rgb(0, 0, 0), rgb(255, 0, 0), yellow, blue );
+    background-size:contain cover;
+
+}
+
+
+#footer{
+    background-image: linear-gradient(to top left, rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 4, 255));
+}
+
+#copyright{
+    color:white;
+}
+
+
+#oloino{
+    margin-top: 10px;
+}
+
+
+#body-post{
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+#add-post-btn{
+    font-size: 20px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    background: black;
+    color: gold;
+}
+
+
+#img-post{
+    margin-top: 500px;
+}
