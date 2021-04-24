@@ -27,7 +27,8 @@ def AddPost(request):
             content = form.cleaned_data['content']
             writer = request.user
             image = form.cleaned_data['image']
-            blog = Blog.objects.create(title = title, content = content, writer = writer, image = image)
+            image = form.cleaned_data['video']
+            blog = Blog.objects.create(title = title, content = content, writer = writer, image = image, video = video)
             blog.save()
             return render(request, 'blogg/successfully-add-post.html')
 

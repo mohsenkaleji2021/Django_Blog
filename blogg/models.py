@@ -17,4 +17,5 @@ class Blog(models.Model):
 
 
     def getsnippet(self):
-        return self.content[0:100] + '\n .... \n'
+        return self.content[0:100]
+

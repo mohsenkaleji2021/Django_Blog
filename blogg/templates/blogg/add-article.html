@@ -16,7 +16,7 @@
 
   <form enctype="multipart/form-data" action="{% url 'addarticle' %}" method="POST">
     {% csrf_token %}
-    <center style="margin-top: 125px;margin-bottom: 125px;">
+    <center style="margin-top: 150px;margin-bottom: 150px;">
         {{ form }}
         <button id="add-post-btn" type="submit">افزودن مطلب</button>
     </center>

@@ -13,21 +13,30 @@
 
 {% if user.is_authenticated %}
 
+<br><br>
+
 <center>
-  <img class="rounded mx-auto d-block" style="margin-top: 50px;margin-left: 2px;margin-right: 2px;" src="{{ blog.image.url }}" width="300" height="250" alt="">
-  <br><br><h3>{{blog.title}}</h3>
-  <p>{{blog.writer}} :نویسنده</p>
-  <p>{{blog.date}}</p><hr><br>
-  <p id="body-post">{{ blog.content }}</p>
-  <br>
-  <br>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ blog.image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{blog.title}}</h5>
+    <h5 class="card-title">{{blog.writer}} :نویسنده</h5>
+    <h5 class="card-title">{{blog.date}}</h5><hr>
+    <p class="card-text">{{ blog.content }}</p>
+  </div>
+</div>
+
+</center>
+<center>
+
   <br>
   <br>
 
   {% if user in blog.like.all %}
-      <a href="{% url 'postunlike' blog.id %}" class="btn btn-warning btn-sm glyphicon glyphicon-eye-open">unlike</a>
+      <b><a href="{% url 'postunlike' blog.id %}" style="background: rgb(255, 25, 25);color: black;font-size: large;" class="btn btn-sm glyphicon glyphicon-eye-open">unlike</a>
   {% else %}
-      <a href="{% url 'postlike' blog.id %}" class="btn btn-warning btn-sm glyphicon glyphicon-eye-open">like</a>
+      <a href="{% url 'postlike' blog.id %}" style="background: rgb(60, 255, 0);color: black;font-size: larger;"  class="btn btn-warning btn-sm glyphicon glyphicon-eye-open">like</a>
   {% endif %}
 
 </center>

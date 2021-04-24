@@ -5,29 +5,29 @@
 
 {% block content %}
 <center>
-  <br><br><h1>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1><br><br><hr><hr><hr><br>
+  <br><br><h1 style="color: white;">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1><br><br><hr><hr><hr><br>
 </center>
 
     
 
-<center>
+
 <div class="row row-cols-3">
   {% for post in blogpost %}
-    <div class="col">
-      <div class="card" style="margin-left: 15px;margin-right: 15px;">
-        <img class="card-img-top" src="{{ post.image.url }}" width="500" alt="">
-          <div class="card-body">
-              <h5 style="margin-top:20px">{{ post.title }}</h5><br>
-              <p style="margin-top:20px">{{ post.getsnippet }}</p><br>
-              <a class="btn btn-warning btn-lg glyphicon glyphicon-eye-open" style="border-radius: 20px; " href="{% url 'detail' post.id %}" role="button"> مشاهده مطلب</a><br><hr>
-              <p>{{ post.writer }} :نویسنده</p>
-              <p>:تاریخ انتشار <p>{{ post.date }}</p> </p>
-          </div>  
-      </div>
-    </div><br><br><br>
+  <div class="col">
+    <div class="card" style="margin-left: 15px;margin-right: 15px;text-align: right;">
+      <img class="card-img-top" src="{{ post.image.url }}" width="500" alt="">
+        <div class="card-body">
+            <h5 style="margin-top:20px">{{ post.title }}</h5><br>
+            <p style="margin-top:20px">{{ post.getsnippet }}</p><br>
+            <a class="btn btn-warning btn-lg glyphicon glyphicon-eye-open" style="border-radius: 20px; " href="{% url 'detail' post.id %}" role="button"> مشاهده مطلب</a><br><hr>
+            <p>{{ post.writer }} :نویسنده</p>
+            <p>{{ post.date }} :تاریخ انتشار</p>
+        </div>  
+    </div>
+  </div><br>
   {% endfor %}
 </div></div><br>
-</center>
+
 
 
 <br><br><br><br>

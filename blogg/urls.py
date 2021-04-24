@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import BlogView, BlogDetail, AddPost, PostLike , PostUnlike
 
-
 urlpatterns = [
     path('', BlogView.as_view(), name='home'),
     path('post/<pk>', BlogDetail.as_view(), name='detail'),
